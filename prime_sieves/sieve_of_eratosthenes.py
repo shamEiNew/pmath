@@ -22,7 +22,7 @@ if __name__ == '__main__':
             #print(i, end=' ')
             #if count % 10 == 0:
             #   print('\n')
-    """with open('complexity.txt', 'a', encoding='utf-8') as comp:
+    """with open('eratosthenes_time.txt', 'a', encoding='utf-8') as comp:
         for i in range(2, n):
             if a[i]:
                 count += 1
@@ -33,6 +33,5 @@ if __name__ == '__main__':
         comp.write(f'\nExecution time is {time.time()-start}.\nThe number of primes below {n} are {count}.')
         comp.write('\n********************\n')
         comp.write('\n')
-        comp.close()"""
-    
+        comp.close()""""
     print(f'\nExecution time is {time.time()-start}.\nThe number of primes below {n} are {count}.')
