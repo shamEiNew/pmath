@@ -47,5 +47,4 @@ if __name__ == '__main__':
             print(t, end=' ')
             if count % 10 == 0:
                 print('\n')
-    
     print(f"\nExecution time = {time.time()-start}. \nThe total number of primes below {n} are {count}")
