@@ -33,5 +33,5 @@ if __name__ == '__main__':
         comp.write(f'\nExecution time is {time.time()-start}.\nThe number of primes below {n} are {count}.')
         comp.write('\n********************\n')
         comp.write('\n')
-        comp.close()""""
+        comp.close()"""
     print(f'\nExecution time is {time.time()-start}.\nThe number of primes below {n} are {count}.')
