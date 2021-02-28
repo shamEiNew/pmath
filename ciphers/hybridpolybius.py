@@ -1,6 +1,5 @@
 def create_playfair_msg():
     
-    plain_text = "HELLO WORLD"
     plain_text = "LOVE YOU"
     plain_text = plain_text.replace(" ","")
     plain_text_stripped = [plain_text[i] for i in range(0,len(plain_text))]
