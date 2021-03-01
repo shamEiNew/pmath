@@ -21,8 +21,8 @@ def create_playfair_msg():
             i+=1
     return playfair_message
 
-def create_playfair_key(key): 
-    key = key.upper()
+def create_playfair_key(): 
+    key = pm.playfair_key().upper()
     playfair_keys = []
     key_modi = ""
     for k in key:
@@ -47,9 +47,8 @@ def transpose(playfair_key):
     return playfair_key_transpose
 
 
-def encrypt_message(playfair_message=None, a=1):
+def encrypt_message(playfair_key, playfair_key_transpose, playfair_message = None, a = 1):
     enc = []
-    
     for j in playfair_message:
 
         for i in range(0, len(playfair_key)):
@@ -61,7 +60,6 @@ def encrypt_message(playfair_message=None, a=1):
                     playfair_key[i][(playfair_key[i].index(j[1])+a)%5]
                     )
 
-
             elif(
                 j[0] in playfair_key_transpose[i]
                 and 
@@ -72,6 +70,7 @@ def encrypt_message(playfair_message=None, a=1):
                     +
                     playfair_key_transpose[i][(playfair_key_transpose[i].index(j[1])+a)%5]
                     )
+
             else:
                 if(
                     j[0] in playfair_key[i]
@@ -99,14 +98,29 @@ def encrypt_message(playfair_message=None, a=1):
                                         +
                                         playfair_key[row_number_1][column_number_1]
                                         )
+
+                                    
     return enc
 
+def hybrid_polybius(playfair_cipher, playfair_key):
+    hybrid = []
+    for letter in playfair_cipher:
+        for i in range(0, len(playfair_key)):
+            for j in range(0, len(playfair_key)):
+                if playfair_key[i][j]==letter:
+                    hybrid.append(str(i+1)+str(j+1))
+    return hybrid
 
+
+"""
 if __name__=="__main__":
     playfair_message = create_playfair_msg()
-    playfair_key = create_playfair_key(pm.playfair_key())
+    playfair_key = create_playfair_key()
     playfair_key_transpose = transpose(playfair_key)
     enc = encrypt_message(playfair_message = playfair_message)
-    p = encrypt_message(playfair_message = enc, a=-1)
     print("".join(enc).lower())
+    p = encrypt_message(playfair_message = enc, a=-1)
     print("".join(p).lower())
+    hybrid_message = hybrid_polybius("".join(enc))
+    print("".join(hybrid_message))
+"""
