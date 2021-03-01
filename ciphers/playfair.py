@@ -49,7 +49,7 @@ def transpose(playfair_key):
 
 def encrypt_message(playfair_message=None, a=1):
     enc = []
-
+    
     for j in playfair_message:
 
         for i in range(0, len(playfair_key)):
@@ -100,6 +100,7 @@ def encrypt_message(playfair_message=None, a=1):
                                         playfair_key[row_number_1][column_number_1]
                                         )
     return enc
+
 
 if __name__=="__main__":
     playfair_message = create_playfair_msg()
