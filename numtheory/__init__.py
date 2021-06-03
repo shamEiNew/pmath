@@ -1,0 +1,1 @@
+from ._sieves import eratosthenes_sieve
