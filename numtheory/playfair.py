@@ -114,7 +114,4 @@ def hybrid_polybius(playfair_cipher, playfair_key):
                 if playfair_key[i][j]==letter:
                     hybrid.append(str(i+1)+str(j+1))
     return hybrid
-<<<<<<< HEAD:ciphers/playfair.py
-=======
 
->>>>>>> 25ef2ea6ac67f21247e76b350a00151dc8fe200b:numtheory/playfair.py
