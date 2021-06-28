@@ -47,7 +47,11 @@ def transpose(playfair_key):
     return playfair_key_transpose
 
 
-def encrypt_message(playfair_key, playfair_key_transpose, playfair_message = None, a = 1):
+def encrypt_message(
+        playfair_key,
+        playfair_key_transpose,
+        playfair_message = None,
+        a = 1):
     enc = []
     for j in playfair_message:
 

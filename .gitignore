@@ -1,2 +1,4 @@
 *.txt
-.vs
+.vs/
+.vscode/
+.metals/
