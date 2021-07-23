@@ -70,7 +70,7 @@ def convergents(cf: list,k=None):
     return convergent
 
 
-def continued_fraction(x, _rational=True, k=15)-> list[int]:
+def continued_fraction(x, _rational=True, k=15)-> list:
 
     def infinite_continued_fraction(k):
         return using_floor(float(sympify(x)), k)

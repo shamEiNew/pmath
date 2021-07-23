@@ -1,7 +1,7 @@
 import math
 from typing import List
 
-def eratosthenes_sieve(b: int) -> List[int]:
+def eratosthenes_sieve(b: int) -> List:
 
     """This sieve takes an argument a positive integer 
     returns all primes less then b.
