@@ -2,7 +2,7 @@ from streamlit.proto.Button_pb2 import Button
 from sympy.series.gruntz import build_expression_tree
 from pymath.numtheory._continued_fractions import *
 import streamlit as st
-
+from pymath.numtheory import _sieves as sieves
 
 
 st.title("Some Theoretic Functions")
@@ -34,5 +34,21 @@ def check_inputs():
     else:
         std_out(rational=False)
 
+def till_primes():
+    st.header('Calculate Primes using Eratosthenes Sieve')
+    a = st.text_input("Enter a positive integer for evaluating primes.")
+    if a:
+        try:
+            st.markdown(f"The following is the list of primes upto {a}.")
+            st.markdown(f"{sieves.eratosthenes_sieve(int(a))}")
+        except:
+            st.markdown("Please enter a valid positive integer")
+
 if __name__=="__main__":
-    check_inputs()
+    apps = ('Continued Fractions', 'Primes')
+    sidenav = st.sidebar.radio('Apps', apps, help='Choose to evaluate')
+    if sidenav==apps[1]:
+        till_primes()
+    elif sidenav==apps[0]:
+        check_inputs()
+    
