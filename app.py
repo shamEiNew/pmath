@@ -1,11 +1,12 @@
+from google.protobuf import message
 from streamlit.proto.Button_pb2 import Button
 from sympy.series.gruntz import build_expression_tree
 from pymath.numtheory._continued_fractions import *
 import streamlit as st
 from pymath.numtheory import _sieves as sieves
+import playfair_app
 
 
-st.title("Some Theoretic Functions")
 
 
 #Continued Fractions---1
@@ -44,11 +45,28 @@ def till_primes():
         except:
             st.markdown("Please enter a valid positive integer")
 
+
+
+
+
 if __name__=="__main__":
-    apps = ('Continued Fractions', 'Primes')
+    st.title("Some Theoretic Functions")
+
+    #All apps to display
+    apps = ('Continued Fractions', 'Primes', "Playfair Cipher")
+
+    #Side navigation panel
     sidenav = st.sidebar.radio('Apps', apps, help='Choose to evaluate')
+
+    #app primes
     if sidenav==apps[1]:
         till_primes()
+
+    #app continued fraction
     elif sidenav==apps[0]:
         check_inputs()
+
+    #app playfair cipher
+    elif sidenav == apps[2]:
+        playfair_app.main()
     

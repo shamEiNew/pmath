@@ -1,8 +1,9 @@
-from numtheory import plain_message as pm
+from google.protobuf import message
+#from numtheory import plain_message as pm
 
-def create_playfair_msg():
+def create_playfair_msg(message):
     
-    plain_text = pm.plain_text().upper()
+    plain_text = message.upper()
     plain_text = plain_text.replace('J', 'I')
     print(plain_text)
     plain_text_stripped = [plain_text[i] for i in range(0,len(plain_text))]
@@ -21,8 +22,8 @@ def create_playfair_msg():
             i+=1
     return playfair_message
 
-def create_playfair_key(): 
-    key = pm.playfair_key().upper()
+def create_playfair_key(key): 
+    key = key.upper()
     playfair_keys = []
     key_modi = ""
     for k in key:
