@@ -7,7 +7,7 @@ from pymath.numtheory import _sieves as sieves
 import playfair_app
 
 
-
+st.set_page_config(layout="wide")
 
 #Continued Fractions---1
 def std_out(rational=True):
