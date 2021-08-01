@@ -1,4 +1,6 @@
-*.txt
 .vs/
 .vscode/
+.metals/
+.pytest_cache/
+__pycache__/
 .metals/
