@@ -1,4 +1,4 @@
-from numtheory._sieves import eratosthenes_sieve as es
+from pymath.numtheory._sieves import eratosthenes_sieve as es
 import numpy as np
 
 def SumOfSquaresZp(p):
